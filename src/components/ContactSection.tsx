@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Mail, MapPin, Phone, Send } from "lucide-react";
 
 type ContactSectionProps = {
@@ -8,6 +8,12 @@ type ContactSectionProps = {
 const ContactSection: React.FC<ContactSectionProps> = ({ theme }) => {
   const sectionRef = useRef<HTMLElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,6 +34,26 @@ const ContactSection: React.FC<ContactSectionProps> = ({ theme }) => {
 
     return () => observer.disconnect();
   }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Format the WhatsApp message
+    const message = `*New Contact Form Submission*%0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Subject:* ${formData.subject}%0A*Message:* ${formData.message}`;
+
+    // Open WhatsApp with the pre-filled message
+    window.open(`https://wa.me/+6281268088246?text=${message}`, "_blank");
+  };
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   return (
     <section
@@ -244,7 +270,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ theme }) => {
             }`}
           >
             <h3 className="text-xl font-bold mb-6">Send a Message</h3>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-4 mb-4">
                 <div>
                   <label
@@ -256,6 +282,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({ theme }) => {
                   <input
                     type="text"
                     id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
                     className={`w-full px-4 py-2 rounded-lg ${
                       theme === "light"
                         ? "bg-gray-100 focus:bg-white border border-gray-300 focus:border-blue-500"
@@ -278,6 +308,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({ theme }) => {
                   <input
                     type="email"
                     id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
                     className={`w-full px-4 py-2 rounded-lg ${
                       theme === "light"
                         ? "bg-gray-100 focus:bg-white border border-gray-300 focus:border-blue-500"
@@ -301,6 +335,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({ theme }) => {
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  required
                   className={`w-full px-4 py-2 rounded-lg ${
                     theme === "light"
                       ? "bg-gray-100 focus:bg-white border border-gray-300 focus:border-blue-500"
@@ -322,6 +360,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({ theme }) => {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
                   rows={5}
                   className={`w-full px-4 py-2 rounded-lg ${
                     theme === "light"
