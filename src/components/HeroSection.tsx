@@ -128,7 +128,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ theme }) => {
             </p>
             <div className="flex space-x-4 mb-8">
               <a
-                href="https://github.com"
+                href="https://github.com/ravirizkhan7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`p-3 rounded-full transition-all duration-300 ${
@@ -145,7 +145,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ theme }) => {
                 <Github size={20} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/muhammad-ravi-rizkhan-59111925b/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`p-3 rounded-full transition-all duration-300 ${
@@ -162,7 +162,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ theme }) => {
                 <Linkedin size={20} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/ravi_rizkhan/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`p-3 rounded-full transition-all duration-300 ${
@@ -231,7 +231,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ theme }) => {
               {/* Profile image container */}
               <div className="relative animate-float">
                 <img
-                  src="../assets/foto.jpg"
+                  src="../../assets/images/ravi.jpg"
                   alt="Muhammad Ravi Rizkhan"
                   className="w-full h-auto object-cover aspect-square rounded-full"
                 />
