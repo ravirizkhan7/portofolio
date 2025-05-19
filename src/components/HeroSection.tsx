@@ -231,7 +231,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ theme }) => {
               {/* Profile image container */}
               <div className="relative animate-float">
                 <img
-                  src="../../dist/assets/foto.jpg"
+                  src="../assets/foto.jpg"
                   alt="Muhammad Ravi Rizkhan"
                   className="w-full h-auto object-cover aspect-square rounded-full"
                 />
