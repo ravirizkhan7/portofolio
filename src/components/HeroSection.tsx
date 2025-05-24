@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Github, Linkedin, Instagram, ChevronDown } from "lucide-react";
+import profilePic from "../../assets/images/ravi.jpg";
 
 type HeroSectionProps = {
   theme: string;
@@ -231,7 +232,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ theme }) => {
               {/* Profile image container */}
               <div className="relative animate-float">
                 <img
-                  src="../../assets/images/ravi.jpg"
+                  src={profilePic}
                   alt="Muhammad Ravi Rizkhan"
                   className="w-full h-auto object-cover aspect-square rounded-full"
                 />
