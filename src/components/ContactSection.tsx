@@ -124,20 +124,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ theme }) => {
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <a
-                      href="razkhan070405.com"
-                      className={`${
-                        theme === "light"
-                          ? "text-blue-600 hover:text-blue-700"
-                          : theme === "dark"
-                          ? "text-blue-400 hover:text-blue-300"
-                          : theme === "purple"
-                          ? "text-purple-400 hover:text-purple-300"
-                          : "text-emerald-400 hover:text-emerald-300"
-                      }`}
-                    >
-                      razkhan070405.com
-                    </a>
+                    <p className="opacity-80">razkhan070405.com</p>
                   </div>
                 </div>
 
@@ -157,20 +144,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ theme }) => {
                   </div>
                   <div>
                     <p className="font-medium">Phone</p>
-                    <a
-                      href="tel:+6281268088246"
-                      className={`${
-                        theme === "light"
-                          ? "text-blue-600 hover:text-blue-700"
-                          : theme === "dark"
-                          ? "text-blue-400 hover:text-blue-300"
-                          : theme === "purple"
-                          ? "text-purple-400 hover:text-purple-300"
-                          : "text-emerald-400 hover:text-emerald-300"
-                      }`}
-                    >
-                      +6281268088246
-                    </a>
+                    <p className="opacity-80">+6281268088246</p>
                   </div>
                 </div>
 
